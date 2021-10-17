@@ -4,6 +4,7 @@ import ScrollService from '../../../utilities/ScrollService'
 import {faBars} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Header.css'
+
 const Header = (props) => {
     const [selectedScreen, setSelectedScreen] = useState(0)
     const [showHeaderOptions, setShowHeaderOptions] = useState(false)
@@ -19,19 +20,19 @@ const Header = (props) => {
 
     const getHeaderOptions = () => {
         return (
-            TOTAL_SCREENS.map((screen, i) => (<div key={screen.screen_name} className={getHeaderOptionsClass(i)} onClick={() => switchScreen(i, screen)}>
-                <span>{screen.screen_name}</span>
+            TOTAL_SCREENS.map((Screen, i) => (<div key={Screen.screen_name} className={getHeaderOptionsClass(i)} onClick={() => switchScreen(i, Screen)}>
+                <span>{Screen.screen_name}</span>
             </div>))
         )
     }
 
     const getHeaderOptionsClass = (index) => {
-        let classes = "header-option"
+        let classes = "header-option "
         if(index < TOTAL_SCREENS.length - 1)
-          classes += "header-option-seperator"
+          classes += "header-option-seperator "
         if(selectedScreen === index)
-          classes += "selected-header-option"
-        return
+          classes += "selected-header-option "
+        return classes
     }
 
     const switchScreen = (index, screen) => {
@@ -47,7 +48,6 @@ const Header = (props) => {
 
 
      return (
-     <div>
         <div className="header-container" onClick={() => setShowHeaderOptions(!showHeaderOptions)}>
             <div className="header-parent">
                 <div className="header-hamburger" onClick={() => setShowHeaderOptions(!showHeaderOptions)}>
@@ -58,13 +58,12 @@ const Header = (props) => {
                         Michael~
                     </span>
                 </div>
-                <div className={(showHeaderOptions) ? "header-options show-hamburger-options" : "header-options"}>
+                <div className={showHeaderOptions ? "header-options show-hamburger-options" : "header-options"}>
                     {getHeaderOptions()}
                 </div>
 
             </div>
         </div>
-     </div>
      )
 }
 export default Header
