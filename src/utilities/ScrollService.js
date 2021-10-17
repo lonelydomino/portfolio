@@ -15,7 +15,7 @@ class ScrollService{
         window.addEventListener('scroll', this.checkCurrentScreenUnderViewport)
     }
     scrollToHireMe =  () => {
-        let contactMeScreen = document.getElementById("Contact Me")
+        let contactMeScreen = document.getElementById("ContactMe")
         if(!contactMeScreen) return
         contactMeScreen.scrollIntoView({behavior: "smooth"})
     }
@@ -44,8 +44,9 @@ class ScrollService{
     }
 
     checkCurrentScreenUnderViewport = (event) => {
-        if (!event || object.keys(event).length < 1)
+        if (!event || Object.keys(event).length < 1)
         return
+        
         for(let screen of TOTAL_SCREENS){
             let screenFromDOM = document.getElementById(screen.screen_name)
             if(!screenFromDOM)
