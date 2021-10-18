@@ -19,7 +19,21 @@ const ContactMe = (props) => {
     const [email, setEmail] = useState("")
     const [message, setMessage] = useState("")
     const [banner, setBanner] = useState("")
-    const [boolean, setBool] = useState(false)
+    const [bool, setBool] = useState(false)
+
+    const handleName = (e) => {
+        setName(e.target.value)
+    }
+    const handleEmail = (e) => {
+        setEmail(e.target.value)
+    }
+    const handleMessage = (e) => {
+        setMessage(e.target.value)
+    }
+    const submitForm = (e) => {
+        e.preventDefault()
+
+    }
 
 
      return (
@@ -58,14 +72,18 @@ const ContactMe = (props) => {
                         <h4>Send Your Email Here!</h4>
                         <img src={imgBack} alt='image not found' />
                  </div>
-                 <form>
+                 <form onSubmit={submitForm}>
                      <p>{banner}</p>
                      <label htmlFor="name">Name</label>
-                     <input type="text"/>
-                     <label htmlFor="name">Name</label>
-                     <input type="text"/>
-                     <label htmlFor="name">Name</label>
-                     <input type="text"/>
+                     <input type="text" onChange={handleName} value={name}/>
+                     <label htmlFor="email">Email</label>
+                     <input type="email" onChange={handleEmail} value={email}/>
+                     <label htmlFor="message">Message</label>
+                     <textarea type="text" onChange={handleMessage} value={message}/>
+                     <div className="send-btn">
+                         <button type="submit">
+                            send<i className="fa fa-paper-plane"/>                         </button>
+                     </div>
                  </form>
              </div>
          </div>
