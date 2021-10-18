@@ -77,19 +77,13 @@ const ContactMe = (props) => {
                         ]}/>
                 </h2>
                 <a href='https://github.com/lonelydomino'>
-                                <i className='fa fa-github'></i>
-                            </a>
-                            <a href='#'>
-                                <i className='fa fa-google-plus-square'></i>
-                            </a>
-                            <a href='https://www.linkedin.com/in/michael-martinez-bb49a8a0/'>
-                                <i className='fa fa-linkedin'></i>
-                            </a>
-                            <a href='https://www.twitch.tv/drmilomd'>
-                                <i className='fa fa-twitch'></i>
-                            </a>
-                            <a href='#'>
-                                <i className='fa fa-twitter'></i>
+                    <i className='fa fa-github'></i>
+                </a>
+                <a href='https://www.linkedin.com/in/michael-martinez-bb49a8a0/'>
+                    <i className='fa fa-linkedin'></i>
+                </a>
+                <a href='https://www.twitch.tv/drmilomd'>
+                    <i className='fa fa-twitch'></i>
                 </a>
              </div>
              <div className="back-form">

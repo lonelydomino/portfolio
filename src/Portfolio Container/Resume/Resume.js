@@ -21,7 +21,7 @@ const Resume = (props) => {
       <div className="resume-heading">
         <div className="resume-main-heading">
           <div className="heading-bullet"></div>
-            <span>{props.heading ? props.heading : ""}</span>
+            <span>{props.link ? (<a href={props.link}>{props.heading}</a> ): props.heading}</span>
             {props.fromDate && props.toDate ? (
               <div className="heading-date">
                 {props.fromDate + " - " + props.toDate}
@@ -61,14 +61,15 @@ const Resume = (props) => {
       duration: { fromDate: "2020", toDate: "2021" },
       description:
         "A portfolio website to showcase my resume, skills and projects.",
-      subHeading: "Technologies used: React JS, Bootstrap",
+      subHeading: "Technologies used: React JS, Bootstrap, NodeJS",
     },
     {
       title: "WebMart",
       duration: { fromDate: "2020", toDate: "2021" },
       description:
         "Mock ecommerce website for showcasing and sell products online.",
-      subHeading: "Technologies used: React JS, Redux, NodeJS",
+      subHeading: "Technologies used: React JS, Redux",
+      link: "https://portfolio-web-mart.netlify.app"
     },
     {
       title: "MamaBear",
@@ -108,9 +109,9 @@ const Resume = (props) => {
           toDate={"Present"}
         />
         <div className="experience-description">
-          <span className="resume-description-text">
+          {/* <span className="resume-description-text">
             Currently working as a Pro Sales Specialist
-          </span>
+          </span> */}
         </div>
         <div className="experience-description">
           <span className="resume-description-text">
@@ -124,6 +125,26 @@ const Resume = (props) => {
           <span className="resume-description-text">
             ● Worked with 3rd party vendors to place and plan product orders and
             deliveries.
+          </span>
+          <br />
+        </div>
+        <ResumeHeading
+          heading={"Home Depot"}
+          subHeading={"Pro Account Sales Associate"}
+          fromDate={"2016"}
+          toDate={"2020"}
+        />
+        <div className="experience-description">
+          <span className="resume-description-text">
+            ● Assisted contractors with sales over the phone and in person.
+          </span>
+          <br />
+          <span className="resume-description-text">
+            ● Coordinated with other departments to fulfil customer orders.
+          </span>
+          <br />
+          <span className="resume-description-text">
+            ● Reduced Pro Department product losses by 8%
           </span>
           <br />
         </div>
@@ -162,6 +183,7 @@ const Resume = (props) => {
           description={projectsDetails.description}
           fromDate={projectsDetails.duration.fromDate}
           toDate={projectsDetails.duration.toDate}
+          link={projectsDetails.link}
         />
       ))}
     </div>,
@@ -169,9 +191,9 @@ const Resume = (props) => {
     //Interests
 
     <div className="resume-screen-container" key="interests">
-      <ResumeHeading heading="Gaming" description="I love gaming" />
-      <ResumeHeading heading="Programming" description="I love Programming" />
-      <ResumeHeading heading="Music" description="I love Music" />
+      <ResumeHeading heading="Gaming" description="I love gaming and will constantly be testing my reflexes playing a multitude of genres." />
+      <ResumeHeading heading="Programming" description="I love designing new apps, especially ones that can help others." />
+      <ResumeHeading heading="Music" description="I enjoy nearly all kinds of music, with rock, jazz and techno being my favorites." />
     </div>,
   ]
 

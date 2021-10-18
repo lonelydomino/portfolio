@@ -55,7 +55,7 @@ const Header = (props) => {
                 </div>
                 <div className="header-logo">
                     <span>
-                        Michael~
+                        Michael Martinez~
                     </span>
                 </div>
                 <div className={showHeaderOptions ? "header-options show-hamburger-options" : "header-options"}>

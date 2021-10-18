@@ -13,17 +13,11 @@ const Profile = () => {
                             <a href='https://github.com/lonelydomino'>
                                 <i className='fa fa-github'></i>
                             </a>
-                            <a href='#'>
-                                <i className='fa fa-google-plus-square'></i>
-                            </a>
                             <a href='https://www.linkedin.com/in/michael-martinez-bb49a8a0/'>
                                 <i className='fa fa-linkedin'></i>
-                            </a>well
+                            </a>
                             <a href='https://www.twitch.tv/drmilomd'>
                                 <i className='fa fa-twitch'></i>
-                            </a>
-                            <a href='#'>
-                                <i className='fa fa-twitter'></i>
                             </a>
                         </div>
                     </div>
@@ -42,15 +36,14 @@ const Profile = () => {
                                 <Typical
                                 loop={Infinity}
                                 steps={[
-                                    "Ethusiatic Dev ", 1000,
+                                    "Ethusiatic Dev  🖥 ", 1000,
                                     "Full Stack Developer 💻", 1000,
-                                    "Flatiron School Graduate 🎓", 1000,
-                                    "Cheese Enthusiast 🧀", 1000,
+                                    "Flatiron School Graduate 🎓", 1000
                                 ]}/>
 
                             </h1>
                             <span className="profile-role-tagline">
-                                Building application front and backends.
+                            Passionate about learning new things and staying current with technology
                             </span>
                         </span>
                     </div>

@@ -16,7 +16,7 @@ const AboutMe = (props) => {
 highlights: {
     bullets: [
         "Full Stack Web Development",
-    "NodeJS",
+    "Javascript",
     "React",
     "Redux for State Management",
     "Rest API"
