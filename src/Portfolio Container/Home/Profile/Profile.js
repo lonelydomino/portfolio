@@ -16,7 +16,7 @@ const Profile = () => {
                             </a>
                             <a href='https://www.linkedin.com/in/michael-martinez-bb49a8a0/'>
                                 <i className='fa fa-linkedin'></i>
-                            </a>
+                            </a>well
                             <a href='https://www.twitch.tv/drmilomd'>
                                 <i className='fa fa-twitch'></i>
                             </a>
