@@ -6,11 +6,13 @@ import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading'
 import ScrollService from '../../utilities/ScrollService'
 import Animations from '../../utilities/Animations'
 import Typical from 'react-typical'
+import axios from 'axios'
+import {toast} from 'react-toastify'
 
 
 const ContactMe = (props) => {
     let fadeInScreenHandler = (screen) => {
-        if(screen.fadeScreen !== props.id) return
+        if(screen.fadeInScreen !== props.id) return
         Animations.animations.fadeInScreen(props.id)
     }
     const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler)
@@ -30,14 +32,37 @@ const ContactMe = (props) => {
     const handleMessage = (e) => {
         setMessage(e.target.value)
     }
-    const submitForm = (e) => {
+    const submitForm = async(e) => {
         e.preventDefault()
-
+        try {
+            let data = {
+                name,
+                email,
+                message
+            }
+            setBool(true)
+            const res = await axios.post(`/contact`, data)
+            if(name.length === 0 || email.length === 0 || message.length === 0){
+                setBanner(res.data.msg)
+                toast.error(res.data.msg)
+                setBool(false)
+            } else if(res.status === 200){
+                setBanner(res.data.msg)
+                toast.success(res.data.msg)
+                setBool(false)
+                setName("")
+                setEmail("")
+                setMessage("")
+            }
+        }catch(error){
+            console.log(error)
+        }
+       
     }
 
 
      return (
-     <div className="main-container" id={props.id || ''}>
+     <div className="main-container fade-in" id={props.id || ''}>
          <ScreenHeading
          subHeading={"Let's get In Touch"}
          title={"Contact Me"}
@@ -80,9 +105,12 @@ const ContactMe = (props) => {
                      <input type="email" onChange={handleEmail} value={email}/>
                      <label htmlFor="message">Message</label>
                      <textarea type="text" onChange={handleMessage} value={message}/>
+
                      <div className="send-btn">
-                         <button type="submit">
-                            send<i className="fa fa-paper-plane"/>                         </button>
+                        <button type="submit">
+                            send<i className="fa fa-paper-plane"/>
+                            {bool ? (<b className="load"><img src={loadingBar} alt="no image"/></b>): ("")}
+                        </button>
                      </div>
                  </form>
              </div>
